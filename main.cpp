@@ -4,7 +4,6 @@
 int main()
 {
 	SetConsoleTitleA("checking....");
-	//load_signed::SetupByteFile();
 	Sleep(600);
 
 	if (FindWindowA(NULL, "Test Project"))
@@ -41,7 +40,6 @@ int main()
 	
 
 
-
 	logOutput::LogMessage("Unloading Victim driver one...");
 	if (!load_signed::UnloadSignedDriver(load_signed::GetDriverName().c_str()))
 	{
@@ -49,10 +47,7 @@ int main()
 		system("pause>0");
 		return false;
 	}
+	
 	system("pause>0");
-
-
-	std::cin.get();
-
 	return true;
 }
