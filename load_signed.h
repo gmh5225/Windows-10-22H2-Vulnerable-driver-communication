@@ -1,6 +1,7 @@
 #pragma once
 
 #include "log.h"
+
 namespace prototypes
 {
 	typedef NTSTATUS(*NtLoadDriver)(PUNICODE_STRING DriverServiceName);
@@ -37,7 +38,6 @@ namespace native
 
 namespace load_signed
 {
-	BOOL SetupByteFile();
 	std::string GetTemporaryLocation();
 	std::string GetDriverName();
 	std::string GetDriverPath();
