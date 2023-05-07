@@ -1,3 +1,28 @@
+#include <windows.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+#include <intrin.h>
+#include <vector>
+#include <type_traits>
+#include <string_view>
+#include <iterator>
+#include <array>
+#include <algorithm>
+#include <map>
+#include <variant>
+#include <thread>
+#include <functional>
+#include <codecvt>
+#include <string>
+#include <utility>
+#include <map>
+#include <atomic>
+#include <memory>
+#include <winternl.h>
+#pragma comment(lib, "ntdll.lib")
+
 namespace unknowndriver
 {
 	const static uint8_t driver[] ={
