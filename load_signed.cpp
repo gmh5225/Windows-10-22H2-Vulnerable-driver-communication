@@ -2,27 +2,6 @@
 
 #pragma warning(disable : 4996)
 
-BOOL load_signed::SetupByteFile()
-{
-	std::ifstream file("C:\\Users\\lands\\OneDrive\\Documents\\bytefile.txt");
-
-	std::stringstream ss;
-	ss << file.rdbuf(); // read the entire file into a stringstream
-	std::string byteString = ss.str();
-
-	for (size_t i = 0; i < byteString.size(); i += 3) { // read byte string separated by spaces
-		std::string byteString16 = byteString.substr(i, 2);
-		unsigned char byte = std::stoi(byteString16, nullptr, 16); // convert the byte string to unsigned char
-		std::cout << "0x" << std::setw(2) << std::setfill('0') << std::hex << (int)byte << ", "; // print out the byte in the desired format
-
-		if ((i + 3) % 48 == 0) { // start a new line after every 16 bytes
-			std::cout << std::endl;
-		}
-	}
-	std::cout << std::endl;
-	return 0;
-}
-
 bool load_signed::ReadFileToMemory(const char* FilePath, void*& OutputBuffer)
 {
 	// Check if the file exists
@@ -35,7 +14,7 @@ bool load_signed::ReadFileToMemory(const char* FilePath, void*& OutputBuffer)
 	auto FileSize = File.tellg(); // Get the size of the path
 	void* Buffer = VirtualAlloc(NULL, FileSize, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
 
-	// If we failed to allocate the buffer, close the file and return
+	
 	if (!Buffer || Buffer == nullptr) {
 		File.close();
 		return false;
