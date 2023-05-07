@@ -1,6 +1,6 @@
 #pragma once
 
-#include "log.h"
+#include "bytefile.h"
 
 namespace prototypes
 {
